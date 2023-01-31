@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
     <head>
         <title>Rango</title>
     </head>
@@ -43,8 +43,8 @@
             {% endif %}
         </div>
         <div>
-            <a href="/rango/about/">About</a><br />
-            <a href="/rango/add_category/">Add a New Category</a><br />
+            <a href="{% url 'rango:about' %}">About</a><br />
+            <a href="{% url 'rango:add_category' %}">Add a New Category</a><br />
             <img src="{%  static 'images/rango.jpg' %}" alt="Picture of Rango"/>
         </div>
     </body>
