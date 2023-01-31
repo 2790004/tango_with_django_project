@@ -11,8 +11,9 @@ from django.urls import reverse
 def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
-    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!', 'categories': category_list}
-    context_dict['pages'] = page_list
+    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!',
+                    'categories': category_list,
+                    'pages': page_list}
     return render(request, 'rango/index.html', context=context_dict)
 
 
@@ -51,7 +52,7 @@ def add_category(request):
         if form.is_valid():
             # Save the new category to the database.
             form.save(commit=True)
-            return redirect('/rango/')
+            return redirect('rango:index')
         else:
             print(form.errors)
     return render(request, 'rango/add_category.html', {'form': form})
@@ -64,7 +65,7 @@ def add_page(request, category_name_slug):
         category = None
 
     if category is None:
-        return redirect('/rango/')
+        return redirect('rango:index')
 
     form = PageForm()
     if request.method == 'POST':
