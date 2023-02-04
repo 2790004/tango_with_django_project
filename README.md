@@ -6,4 +6,5 @@ Chapter 5: 'tests_chapter5.py' works well.\
 Chapter 6: 'tests_chapter6.py' works well.\
 Chapter 7: 'tests_chapter7.py' works well.\
 Chapter 8: 'tests_chapter8.py' works well.\
-Chapter 9: 'tests_chapter9.py' works well.
+Chapter 9: 'tests_chapter9.py' works well.\
+Chapter 10: 'tests_chapter10.py' works well.
