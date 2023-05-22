@@ -12,7 +12,7 @@ from datetime import datetime
 # Create your views here.
 
 def index(request):
-    category_list = Category.objects.order_by('-likes')[:5]
+    category_list = Category.objects.order_by('likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
     visitor_cookie_handler(request)
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!',
