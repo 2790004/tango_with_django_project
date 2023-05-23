@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -134,8 +135,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
-# Login
-LOGIN_URL = 'rango:login'
+# Login and Logout Settings
+LOGIN_URL = 'auth_login'
+LOGIN_REDIRECT_URL = 'rango:index'
+
+# Registration Settings
+REGISTRATION_OPEN = True
+
+
+# Password Reset Settings
+PASSWORD_CHANGE_URL = 'auth_password_change'
 
 # Session Settings
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
